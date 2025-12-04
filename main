@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login – Beispielseite</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 15px;
+        }
+
+        .toggle-row {
+            margin: 10px 0;
+            color: #7a7676;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .toggle-row span {
+            margin-left: 6px;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #9c2323;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background: #7d1c1c;
+        }
+
+        .forgot {
+            text-align: center;
+            margin-top: 15px;
+            color: #7a7676;
+            text-decoration: none;
+            display: block;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #6f6f6f;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #6f6f6f;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Login für registrierte Nutzer:innen</h2>
+
+        <div class="form-group">
+            <label>E-Mail / Nutzername</label>
+            <input type="text" placeholder="E-Mail / Nutzername">
+        </div>
+
+        <div class="form-group">
+            <label>Passwort</label>
+            <input type="password" placeholder="Passwort">
+        </div>
+
+        <div class="toggle-row">
+            <strong>▴</strong><span>Mehr Optionen</span>
+        </div>
+
+        <button class="login-btn">Login</button>
+
+        <a href="#" class="forgot">Passwort vergessen?</a>
+    </div>
+
+    <footer>
+        <a href="#">Impressum</a> •
+        <a href="#">Nutzungsordnung</a> •
+        <a href="#">Datenschutzerklärung</a> •
+        <a href="#">Kontakt</a> •
+        <a href="#">Status</a> •
+        <a href="#">Sicherheit</a>
+        <br><br>
+        ©2025 Beispielseite
+    </footer>
+
+</body>
+</html>
