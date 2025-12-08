@@ -1,0 +1,189 @@
+
+		.logo {
+			box-shadow: 0 0 2px black;
+			margin-bottom: 50px;
+			padding-left: 420px;
+		}
+
+		
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            margin-top: 0;
+            font-weight: 100;
+			color: #3C424B;
+			
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+			padding-right: 20px;
+			background-color: white;
+			color: #3C424B;
+        }
+
+        input[type="text"]
+		{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 15px;
+        }
+		
+		/* Sobald Text eingegeben wurde */
+			input[type="text"]:not(:placeholder-shown) {
+			background-color: #eaeffd;
+}
+
+input[type="password"]:not(:placeholder-shown) {
+			background-color: #eaeffd;
+}
+
+
+
+		  .form-group-password {
+            margin-bottom: 18px;
+			padding-right: 20px;
+			color: #3C424B;
+			position:relative;
+        }
+
+        input[type="password"],
+		input [type="text"]
+		{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 15px;
+        }
+		
+		.toggle-password {
+    position: absolute;
+    right: -5px;
+    top: 22px; /* passt zur Höhe des Labels */
+    background: e5e5e5;
+    border: 1px solid #cccs;
+    cursor: pointer;
+    font-size: 18px;
+	align-items: center;
+}
+		.toggle-password img {
+    width: 30px;
+    height: 31px;
+		}
+	toggle-password:hover {
+            ;
+        }
+		
+		select[class="schule"],
+		select[class="system"]
+		{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 15px;
+        }
+
+        .toggle-row {
+            margin: 10px 0;
+            color: #7a7676;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .toggle-row span {
+            margin-left: 6px;
+        }
+
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: #90342d;
+            color: white;
+            border: none;
+            font-size: 18px;
+            border-radius: 3px;
+            cursor: pointer;
+			font-weight: bold;
+        }
+
+        .login-btn:hover {
+            background: #6b2621;
+        }
+
+        .forgot {
+            text-align: center;
+            margin-top: 15px;
+            color: #90342d;
+            text-decoration: none;
+            display: block;
+			font-weight: normal;
+			font-size: 16px;
+        }
+		
+		.forgot:hover {
+			text-decoration: underline;
+		}
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: #3C424B;
+            font-size: 18px;
+			font-weight: normal;
+        }
+
+        footer a {
+           	color: #90342d;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    .options-btn {
+        width: 100%;
+        padding: 12px;
+		padding-right: 20px;
+        background: white;
+        color: #3C424B;
+        border: 1px solid #ccc;
+        font-size: 18px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 10px;
+		font-weight: bold;
+
+		}
+
+    .options-btn:hover {
+        background: #e5e5e5;
+    }
+
+    .options-container {
+        padding: 12px;
+        border: none;
+        border-radius: 3px;
+        margin-top: 8px;
+        background: white;
+		color: #3C424B;
+    }
+	
+	.footer {
+		margin-top: 250px;
+		border: none;
+	}
