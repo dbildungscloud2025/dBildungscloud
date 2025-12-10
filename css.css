@@ -261,7 +261,7 @@ input[type="password"]:not(:placeholder-shown) {
 		margin-top: 250px;
 		border: none;
 	}
-
+	
 	.footer-tablet {
 		display: none;
 		margin-top: 250px;
@@ -269,7 +269,7 @@ input[type="password"]:not(:placeholder-shown) {
 	}
 	
 	
-		/* Smartphones */
+	/* Smartphones */
 @media (max-width: 600px) {
 	
 	#popup {
@@ -337,8 +337,6 @@ input[type="password"]:not(:placeholder-shown) {
 	
 	.footer-tablet {
 		display: none;
-		margin-top: 250px;
-		border: none;
 	}
 	
 	.footer-handy {
@@ -396,6 +394,10 @@ input[type="password"]:not(:placeholder-shown) {
 	
 	.footer {
 	display: none;
+	}
+	
+	.footer-handy {
+		display: none;
 	}
 	
 	.footer-tablet {
