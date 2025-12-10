@@ -207,6 +207,7 @@ input[type="password"]:not(:placeholder-shown) {
 
         .footer {
             position: fixed;
+			background: white;
 			bottom: 2%;
 			left: 30%;
             text-align: center;
@@ -215,6 +216,7 @@ input[type="password"]:not(:placeholder-shown) {
 			font-weight: normal;
 			align-items: center;;
 			border: none;
+			display: block;
         }
 
         .footer a {
@@ -226,6 +228,21 @@ input[type="password"]:not(:placeholder-shown) {
         .footer a:hover {
             text-decoration: underline;
         }
+		
+		
+		.footer-handy {
+		display: none;
+		margin-top: 250px;
+		border: none;
+	}
+	
+	
+	.footer-tablet {
+		display: none;
+		margin-top: 250px;
+		border: none;
+	}
+	
 
     .options-btn {
         width: 100%;
@@ -256,17 +273,6 @@ input[type="password"]:not(:placeholder-shown) {
     }
 	
 	
-	.footer-handy {
-		display: none;
-		margin-top: 250px;
-		border: none;
-	}
-	
-	.footer-tablet {
-		display: none;
-		margin-top: 250px;
-		border: none;
-	}
 	
 	
 	/* Smartphones */
@@ -332,11 +338,15 @@ input[type="password"]:not(:placeholder-shown) {
 	
 	.footer {
 	display: none;
+	margin-top: 250px;
+		border: none;
 	}
 	
 	
 	.footer-tablet {
 		display: none;
+		margin-top: 250px;
+		border: none;
 	}
 	
 	.footer-handy {
@@ -370,7 +380,7 @@ input[type="password"]:not(:placeholder-shown) {
 	
 	.logo img {
 	position: fixed;
-	left: 5%;
+	left: 0%;
 	top: 0%;
 }
 
@@ -379,6 +389,7 @@ input[type="password"]:not(:placeholder-shown) {
 	width: 90%;
 	align-items: center;
 	max-width: 1200px;	
+	margin-top: 8%; /* Abstand nach unten */
 	}	
 	
 	.seite {
@@ -386,18 +397,18 @@ input[type="password"]:not(:placeholder-shown) {
     flex-direction: column;
     align-items: center; /* horizontal mittig */
 }
-
-.container {
-    margin-top: 8%; /* Abstand nach unten */
-}
 	
 	
 	.footer {
 	display: none;
+	margin-top: 250px;
+		border: none;
 	}
 	
 	.footer-handy {
 		display: none;
+		margin-top: 250px;
+		border: none;
 	}
 	
 	.footer-tablet {
@@ -407,7 +418,6 @@ input[type="password"]:not(:placeholder-shown) {
 	background: white;
 	display: block;
     text-align: center;
-    color: #3C424B;
     font-size: 17px;
 	font-weight: normal;
 	align-items: center;
