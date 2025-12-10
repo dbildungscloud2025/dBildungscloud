@@ -269,7 +269,7 @@ input[type="password"]:not(:placeholder-shown) {
 	}
 	
 	
-	/* Smartphones */
+		/* Smartphones */
 @media (max-width: 600px) {
 	
 	#popup {
@@ -314,22 +314,31 @@ input[type="password"]:not(:placeholder-shown) {
 }
 
 			
+	
 	.container {
 	width: 80%;
-	position: fixed;
-	top: 20%;
-	left: 5%;
 	align-items: center;
+	max-width: 500px;	
+	margin-top: 15%; /* Abstand nach unten */
+	}	
+	
+	.seite {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* horizontal mittig */
+}
 		
 	}	
 	
 	.footer {
 	display: none;
 	}
-
-
+	
+	
 	.footer-tablet {
 		display: none;
+		margin-top: 250px;
+		border: none;
 	}
 	
 	.footer-handy {
@@ -354,7 +363,7 @@ input[type="password"]:not(:placeholder-shown) {
 	
 		.logo {
 	width: 100%;
-	height: 10%;
+	height: 8%;
     position: fixed;
     top: 0%;
     left: 0%;
@@ -388,10 +397,6 @@ input[type="password"]:not(:placeholder-shown) {
 	.footer {
 	display: none;
 	}
-
-	.footer-handy {
-		display: none;
-	}
 	
 	.footer-tablet {
 	width: 100%;
@@ -407,8 +412,4 @@ input[type="password"]:not(:placeholder-shown) {
 	border: none;
 	}
 }
-
-
-
-
-
+	
