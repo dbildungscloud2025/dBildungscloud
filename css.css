@@ -260,7 +260,12 @@ input[type="password"]:not(:placeholder-shown) {
 		display: none;
 		margin-top: 250px;
 		border: none;
-		
+	}
+
+	.footer-tablet {
+		display: none;
+		margin-top: 250px;
+		border: none;
 	}
 	
 	
@@ -393,3 +398,4 @@ input[type="password"]:not(:placeholder-shown) {
 	border: none;
 	}
 }
+
