@@ -330,8 +330,6 @@ input[type="password"]:not(:placeholder-shown) {
 
 	.footer-tablet {
 		display: none;
-		margin-top: 250px;
-		border: none;
 	}
 	
 	.footer-handy {
@@ -390,6 +388,10 @@ input[type="password"]:not(:placeholder-shown) {
 	.footer {
 	display: none;
 	}
+
+	.footer-handy {
+		display: none;
+	}
 	
 	.footer-tablet {
 	width: 100%;
@@ -405,6 +407,7 @@ input[type="password"]:not(:placeholder-shown) {
 	border: none;
 	}
 }
+
 
 
 
