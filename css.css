@@ -326,6 +326,13 @@ input[type="password"]:not(:placeholder-shown) {
 	.footer {
 	display: none;
 	}
+
+
+	.footer-tablet {
+		display: none;
+		margin-top: 250px;
+		border: none;
+	}
 	
 	.footer-handy {
 	width: 100%;
@@ -398,6 +405,7 @@ input[type="password"]:not(:placeholder-shown) {
 	border: none;
 	}
 }
+
 
 
 
