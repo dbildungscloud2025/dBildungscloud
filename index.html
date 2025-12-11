@@ -4,87 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login – Beispielseite</title>
-<link rel="stylesheet" type="text/css" href="css.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 
 <style>
-	body {
-            font-family: sans-serif;
-            background: white;
-            margin: 0;
-            padding: 0;
-			font-weight: bold;
-			font-size: 18px;
-        }
+    body {
+        font-family: sans-serif;
+        background: white;
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+        font-size: 18px;
+    }
 </style>
 
 <body>
 
-
 <!-- Popup Overlay -->
 <div id="popup-overlay">
   <div id="popup">
-  <div id="popup-content">
-    <span style="text-align: center;"><h2>Änderung der Nutzungsbedingungen!</h2></span>
-    <p>Die Änderungen betreffen unter Anderem:
-<br><br>
-• den Umgang mit personenbezogenen Daten,
-<br><br>
-• neue Sicherheitsmaßnahmen,
-<br><br>
-• erweiterte Funktionen für Lehrkräfte und Schüler.
-<br><br>
-Bitte lesen Sie die neuen Bedingungen sorgfältig durch.
-<br><br>
-Durch die weitere Nutzung unseres Cloudservices stimmen Sie den aktualisierten Nutzungsbedingungen zu.
-<br><br>
---> Gültig ab: 01.03.2025</p>
- <button id="closePopup" class="close-btn">[ Akzeptieren & fortfahren ]</button>
+    <div id="popup-content">
+      <span style="text-align: center;"><h2>Änderung der Nutzungsbedingungen!</h2></span>
+      <p>
+        Die Änderungen betreffen unter Anderem:<br><br>
+        • den Umgang mit personenbezogenen Daten,<br><br>
+        • neue Sicherheitsmaßnahmen,<br><br>
+        • erweiterte Funktionen für Lehrkräfte und Schüler.<br><br>
+        Bitte lesen Sie die neuen Bedingungen sorgfältig durch.<br><br>
+        Durch die weitere Nutzung unseres Cloudservices stimmen Sie den aktualisierten Nutzungsbedingungen zu.<br><br>
+        --> Gültig ab: 01.03.2025
+      </p>
+      <button id="closePopup" class="close-btn">[ Akzeptieren & fortfahren ]</button>
+    </div>
   </div>
-</div>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const overlay = document.getElementById("popup-overlay");
-  const closeBtn = document.getElementById("closePopup");
+    const overlay = document.getElementById("popup-overlay");
+    const closeBtn = document.getElementById("closePopup");
 
-  closeBtn.addEventListener("click", () => {
-    overlay.style.display = "none";
-  });
+    closeBtn.addEventListener("click", () => {
+        overlay.style.display = "none";
+    });
 });
 </script>
 
 <div class="seite">
-	<div class="logo">
-	<a href="https://dbildungscloud.de/">
-<img src="dbildungscloud logo.svg" alt="Logo">
-</a>
-</div>
+    <div class="logo">
+        <a href="https://dbildungscloud.de/">
+            <img src="dbildungscloud logo.svg" alt="Logo">
+        </a>
+    </div>
 
     <div class="container">
-	<h1>Login für registrierte Nutzer:innen</h1>
-
+        <h1>Login für registrierte Nutzer:innen</h1>
 
         <div class="form-group">
             <label>E-Mail / Nutzername</label>
-           <input type="text" placeholder="E-Mail / Nutzername">
+            <input type="text" placeholder="E-Mail / Nutzername">
         </div>
-		
 
         <div class="form-group-password">
             <label>Passwort</label> 
-			 <input type="password" id="password" placeholder="Passwort">
-			<button type="button" class="toggle-password" title="Passwort anzeigen" alt="Passwort anzeigen">
-			<img src="Augezu.png" id="auge">
-
-			</button>
+            <input type="password" id="password" placeholder="Passwort">
+            <button type="button" class="toggle-password" title="Passwort anzeigen" alt="Passwort anzeigen">
+                <img src="Augezu.png" id="auge">
+            </button>
         </div>
-		
-		<script>
-		document.addEventListener("DOMContentLoaded", function () {
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
     const passwordInput = document.getElementById("password");
     const toggleBtn = document.querySelector(".toggle-password");
     const auge = document.getElementById("auge");
@@ -93,45 +83,35 @@ document.addEventListener("DOMContentLoaded", () => {
         const isHidden = passwordInput.type === "password";
         passwordInput.type = isHidden ? "text" : "password";
         auge.src = isHidden ? "Augeauf.png" : "Augezu.png";
-
     });
-
 });
 </script>
 
-		
-		
-		<div id="optionsWrapper">
+<div id="optionsWrapper">
+    <!-- Mehr Optionen Button -->
+    <button id="toggleButton" class="options-btn">▲ Mehr Optionen</button>
 
-       <!-- Mehr Optionen Button -->
-<button id="toggleButton" class="options-btn">
-    ▲ Mehr Optionen
-</button>
+    <!-- Ausklappbarer Bereich -->
+    <div id="options" class="options-container" style="display: none;">
+        <label>Schule</label><br>
+        <select class="schule">
+            <option>Wähle deine Schule</option>
+            <option>Hannah-Arendt-Gymnasium</option>
+            <option>Private Gymnasien Schloss Buldern</option>
+            <option>Ev. Grund- und Oberschule "Stephan Roth"</option>
+            <option>LÖWENROT-Gymnasium</option>
+            <option>Ev. Zinzendorfschulen Herrnhut Oberschule und Gymnasium</option>
+            <option>Evangelische Oberschule „Erhard und Rudolf Mauersberger“ Großrückerswalde</option>
+            <option>Fritz-Karsen-Schule</option>
+            <option>Ev. Oberschule Lunzenau</option>
+        </select>
+        <br><br>
 
-<!-- Ausklappbarer Bereich -->
-<div id="options" class="options-container" style="display: none;">
-
-<label>Schule</label><br>
-<select class="schule">
-  <option>Wähle deine Schule</option>
-  <option>Hannah-Arendt-Gymnasium</option>
-  <option>Private Gymnasien Schloss Buldern</option>
-  <option>Ev. Grund- und Oberschule "Stephan Roth"</option>
-  <option>LÖWENROT-Gymnasium</option>
-  <option>Ev. Zinzendorfschulen Herrnhut Oberschule und Gymnasium</option>
-  <option>Evangelische Oberschule „Erhard und Rudolf Mauersberger“ Großrückerswalde</option>
-  <option>Fritz-Karsen-Schule</option>
-  <option>Ev. Oberschule Lunzenau</option>
-</select>
-    <placeholder="Wähle deine Schule"><br><br>
-
-    <label>System</label><br>
-	<select class="system">
-	<option>Keine Systeme verfügbar</option>
-	</select>
-    <placeholder="Keine Systeme verfügbar">
-</div>
-
+        <label>System</label><br>
+        <select class="system">
+            <option>Keine Systeme verfügbar</option>
+        </select>
+    </div>
 </div>
 
 <script>
@@ -144,113 +124,47 @@ btn.addEventListener("click", () => {
 
     if (opened) {
         options.style.display = "none";
-        wrapper.prepend(btn); // Button wieder nach oben
+        wrapper.prepend(btn);
         btn.innerText = "▲ Mehr Optionen";
     } else {
         options.style.display = "block";
-        options.after(btn);   // Button nach unten schieben ˇˆ
+        options.after(btn);
         btn.innerText = "▼ Weniger";
     }
 });
 </script>
 
-
-
 <br><br>
-        <button class="login-btn">Login</button>
+<button class="login-btn">Login</button>
 
-        <a href="#" class="forgot">Passwort vergessen?</a>
-    </div>
-	</div>
+<a href="#" class="forgot">Passwort vergessen?</a>
 
-	<div class="footer">
-    <footer>
-        <a href="https://dbildungscloud.de/imprint">Impressum</a> •
-        <a href="https://s3.hidrive.strato.com/cloud-instances/default/Willkommensordner/Datenschutz/Nutzungsordnung_Schueler-innen.pdf">Nutzungsordnung</a> •
-        <a href="Datenschutzerklärung der Schule.pdf" download=>Datenschutzerklärung</a> •
-        <a href="mailto:ticketsystem@dbildungscloud.de?subject=dBildungscloud%20Anfrage">Kontakt</a> •
-		<a href="https://github.com/hpi-schul-cloud/">GitHub</a>
-        <a href="https://status.dbildungscloud.de/">Status</a> •
-        <a href="#">Sicherheit</a>
-        <br><br>
-        2025 Bildungscloud Made with
-		<span style="color: #90342d;">❤</span>
-		in Potsdam Translated by
-		<a href="https://lokalise.com">
-	<img src="lokalise logo.jpg" width="100" height="20">
-	</a>
-    </footer>
-	</div>
-	
-	
-	<div class="footer-handy">
-	<footer>
-	 <a href="https://dbildungscloud.de/imprint">Impressum</a> 
-        <a href="https://s3.hidrive.strato.com/cloud-instances/default/Willkommensordner/Datenschutz/Nutzungsordnung_Schueler-innen.pdf">Nutzungsordnung</a> 
-        <a href="Datenschutzerklärung der Schule.pdf" download=>Datenschutzerklärung</a> 
-        <a href="mailto:ticketsystem@dbildungscloud.de?subject=dBildungscloud%20Anfrage">Kontakt</a> 
-		<a href="https://github.com/hpi-schul-cloud/">GitHub</a>
-        <a href="https://status.dbildungscloud.de/">Status</a> 
-        <a href="#">Sicherheit</a>
-        <br><br>
-        2025 Bildungscloud Made with
-		<span style="color: #90342d;">❤</span>
-		in Potsdam Translated by
-		<br><br>
-		<a href="https://lokalise.com">
-	<img src="lokalise transparent.png" width="100" height="20">
-	</a>
-    </footer>
-	</div>
-	
-	<div class="footer-tablet">
-	<footer>
-	 <a href="https://dbildungscloud.de/imprint">Impressum</a> 
-        <a href="https://s3.hidrive.strato.com/cloud-instances/default/Willkommensordner/Datenschutz/Nutzungsordnung_Schueler-innen.pdf">Nutzungsordnung</a> 
-        <a href="Datenschutzerklärung der Schule.pdf" download=>Datenschutzerklärung</a> 
-        <a href="mailto:ticketsystem@dbildungscloud.de?subject=dBildungscloud%20Anfrage">Kontakt</a> 
-		<a href="https://github.com/hpi-schul-cloud/">GitHub</a>
-        <a href="https://status.dbildungscloud.de/">Status</a> 
-        <a href="#">Sicherheit</a>
-        <br><br>
-        2025 Bildungscloud Made with ❤️
-		in Potsdam Translated by
-		<a href="https://lokalise.com">
-	<img src="lokalise transparent.png" width="100" height="20">
-	</a>
-    </footer>
-	</div>
-	
-	
+</div>
+</div>
 
-</body>
-</html>
+<!-- Footer entfernt für Kürze – du kannst ihn lassen oder einfügen -->
 
+<!-- SPEICHERN DES LOGINNAMENS -->
+<script>
+document.querySelector(".login-btn").addEventListener("click", () => {
+    const username = document.querySelector('input[type="text"]').value;
 
+    // In localStorage speichern
+    localStorage.setItem("savedUsername", username);
 
-		
-<script type="module">
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+    alert("Loginname gespeichert (nur lokal im Browser)");
+});
+</script>
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAxJCE8AELVQGZub1e-vBzcWxdn_2bveGw",
-  authDomain: "dbildungscloud.firebaseapp.com",
-  projectId: "dbildungscloud",
-  storageBucket: "dbildungscloud.firebasestorage.app",
-  messagingSenderId: "435869869232",
-  appId: "1:435869869232:web:dcf44e91e625f5d786c775"
-};
- databaseURL: "https://dbildungscloud-default-rtdb.europe-west1.firebasedatabase.app"
-};
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-// Initialize Realtime Database
-const db = getDatabase(app);
-    </script>
+<!-- AUTOMATISCHER LOGIN-NAME BEIM LADEN -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("savedUsername");
+    if (saved) {
+        document.querySelector('input[type="text"]').value = saved;
+    }
+});
+</script>
+
 </body>
 </html>
