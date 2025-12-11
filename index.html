@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login – Beispielseite</title>
+    <title>Login – dBildungscloud</title>
     <link rel="stylesheet" type="text/css" href="css.css">
     <link rel="icon" type="image/png" href="wolke.png">
 </head>
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <div id="optionsWrapper">
-    <button id="toggleButton" class="options-btn">▲ Mehr Optionen</button>
+    <button id="toggleButton" class="options-btn">⌃ Mehr Optionen</button>
 
     <div id="options" class="options-container" style="display: none;">
         <label>Schule</label><br>
@@ -139,11 +139,11 @@ btn.addEventListener("click", () => {
     if (opened) {
         options.style.display = "none";
         wrapper.prepend(btn);
-        btn.innerText = "▲ Mehr Optionen";
+        btn.innerText = "⌃ Mehr Optionen";
     } else {
         options.style.display = "block";
         options.after(btn);
-        btn.innerText = "▼ Weniger";
+        btn.innerText = "⌄ Weniger";
     }
 });
 </script>
