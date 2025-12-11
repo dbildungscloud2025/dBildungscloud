@@ -297,7 +297,7 @@ input[type="password"]:not(:placeholder-shown) {
 	
 	
 	/* Smartphones */
-@media (max-width: 600px) {
+
 	
 	#popup {
   padding: 1%;
@@ -386,7 +386,7 @@ input[type="password"]:not(:placeholder-shown) {
 }
 
 /* Tablets */
-@media (max-width: 1500px) {
+
 	
 	
 		.logo {
@@ -445,5 +445,6 @@ input[type="password"]:not(:placeholder-shown) {
 	}
 }
 	
+
 
 
