@@ -150,36 +150,11 @@ btn.addEventListener("click", () => {
 
 <br><br>
 <button class="login-btn" id="loginBtn">Login</button>
-
-<div id="popup2" class="popup2">
-    <div class="popup2-content">
-        <h2>Hinweis</h2>
-        <p>Du wirst nun auf eine andere Website weitergeleitet.</p>
-        
-        <button id="redirectBtn" class="redirect">
-            Weiter zur Website
-        </button>
-
-        <button id="closePopup2Btn" class="close">
-            Schließen
-        </button>
-    </div>
-</div>
-
- <script>       
-document.getElementById("openPopup2Btn").onclick = function() {
-    document.getElementById("popup2").style.display = "block";
-};
-
-document.getElementById("closePopup2Btn").onclick = function() {
-    document.getElementById("popup").style.display = "none";
-};
-
-document.getElementById("redirectBtn").onclick = function() {
-    window.location.href = "https://dbildungscloud.de/login?redirect=https%3A%2F%2Fdbildungscloud.de%2Frooms%2Fcourses-overview"; // Ziel-URL hier eintragen
-};
- </script>
-        
+        <script>
+document.getElementById("loginBtn").addEventListener("click", function() {
+    window.location.href = "https://dbildungscloud.de/login?redirect=https%3A%2F%2Fdbildungscloud.de%2Frooms%2Fcourses-overview";
+});
+</script>
 
 <a href="#" class="forgot">Passwort vergessen?</a>
 </div>
