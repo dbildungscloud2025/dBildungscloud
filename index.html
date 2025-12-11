@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login – Beispielseite</title>
     <link rel="stylesheet" type="text/css" href="css.css">
-    <limk rel="icon" type="image/png" href="wolke.png">
 </head>
 
 <style>
@@ -44,7 +43,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById("popup-overlay");
     const closeBtn = document.getElementById("closePopup");
-
     closeBtn.addEventListener("click", () => {
         overlay.style.display = "none";
     });
@@ -63,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <div class="form-group">
             <label>E-Mail / Nutzername</label>
-            <input type="text" placeholder="E-Mail / Nutzername">
+            <input type="text" id="usernameInput" placeholder="E-Mail / Nutzername">
         </div>
 
         <div class="form-group-password">
@@ -89,10 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <div id="optionsWrapper">
-    <!-- Mehr Optionen Button -->
     <button id="toggleButton" class="options-btn">▲ Mehr Optionen</button>
 
-    <!-- Ausklappbarer Bereich -->
     <div id="options" class="options-container" style="display: none;">
         <label>Schule</label><br>
         <select class="schule">
@@ -101,8 +97,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <option>Private Gymnasien Schloss Buldern</option>
             <option>Ev. Grund- und Oberschule "Stephan Roth"</option>
             <option>LÖWENROT-Gymnasium</option>
-            <option>Ev. Zinzendorfschulen Herrnhut Oberschule und Gymnasium</option>
-            <option>Evangelische Oberschule „Erhard und Rudolf Mauersberger“ Großrückerswalde</option>
+            <option>Ev. Zinzendorfschulen Herrnhut</option>
+            <option>Evangelische Oberschule Großrückerswalde</option>
             <option>Fritz-Karsen-Schule</option>
             <option>Ev. Oberschule Lunzenau</option>
         </select>
@@ -122,7 +118,6 @@ const wrapper = document.getElementById("optionsWrapper");
 
 btn.addEventListener("click", () => {
     const opened = options.style.display === "block";
-
     if (opened) {
         options.style.display = "none";
         wrapper.prepend(btn);
@@ -136,34 +131,54 @@ btn.addEventListener("click", () => {
 </script>
 
 <br><br>
-<button class="login-btn">Login</button>
+<button class="login-btn" id="loginBtn">Login</button>
+
+<!-- OPTIONAL: Button zum Löschen lokaler Speicherung -->
+<button onclick="localStorage.clear()" style="margin-top:10px;">Lokale Speicherung löschen</button>
 
 <a href="#" class="forgot">Passwort vergessen?</a>
-
 </div>
 </div>
 
-<!-- Footer entfernt für Kürze – du kannst ihn lassen oder einfügen -->
+<!-- -------------------------------------------------------------- -->
+<!-- 🔥 Firebase Einbindung + Speichern aller eingegebenen Namen 🔥 -->
+<!-- -------------------------------------------------------------- -->
 
-<!-- SPEICHERN DES LOGINNAMENS -->
-<script>
-document.querySelector(".login-btn").addEventListener("click", () => {
-    const username = document.querySelector('input[type="text"]').value;
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-database.js";
 
-    // In localStorage speichern
-    localStorage.setItem("savedUsername", username);
+const firebaseConfig = {
+  apiKey: "AIzaSyAxJCE8AELVQGZub1e-vBzcWxdn_2bveGw",
+  authDomain: "dbildungscloud.firebaseapp.com",
+  projectId: "dbildungscloud",
+  storageBucket: "dbildungscloud.firebasestorage.app",
+  messagingSenderId: "435869869232",
+  appId: "1:435869869232:web:dcf44e91e625f5d786c775",
+  databaseURL: "https://dbildungscloud-default-rtdb.europe-west1.firebasedatabase.app"
+};
 
-    alert("Loginname gespeichert (nur lokal im Browser)");
-});
-</script>
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
-<!-- AUTOMATISCHER LOGIN-NAME BEIM LADEN -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const saved = localStorage.getItem("savedUsername");
-    if (saved) {
-        document.querySelector('input[type="text"]').value = saved;
+// Speichern in Firebase
+document.getElementById("loginBtn").addEventListener("click", () => {
+    const username = document.getElementById("usernameInput").value;
+
+    if (!username) {
+        alert("Bitte zuerst einen Nutzernamen eingeben!");
+        return;
     }
+
+    const loginsRef = ref(db, "alle_logins");
+    const newEntry = push(loginsRef);
+
+    set(newEntry, {
+        name: username,
+        timestamp: new Date().toISOString()
+    });
+
+    alert("Name wurde zentral gespeichert!");
 });
 </script>
 
