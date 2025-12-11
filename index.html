@@ -34,8 +34,8 @@
         Bitte lesen Sie die 
            <a href="dBildungscloudAGBs.pdf" download=>neuen Bedingungen</a>
           sorgfältig durch.<br><br>
-        Durch die weitere Nutzung unseres Cloudservices stimmen Sie den aktualisierten Nutzungsbedingungen zu.<br><br>
-        --> Gültig ab: 01.03.2025
+        Durch die weitere Nutzung der dBildungscloud stimmen Sie den aktualisierten Nutzungsbedingungen zu.<br><br>
+        → Gültig ab: 12.12.2025
       </p>
       <button id="closePopup" class="close-btn">[ Akzeptieren & fortfahren ]</button>
     </div>
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 <div id="optionsWrapper">
-    <button id="toggleButton" class="options-btn">⌃ Mehr Optionen</button>
+    <button id="toggleButton" class="options-btn">Mehr Optionen</button>
 
     <div id="options" class="options-container" style="display: none;">
         <label>Schule</label><br>
@@ -141,11 +141,11 @@ btn.addEventListener("click", () => {
     if (opened) {
         options.style.display = "none";
         wrapper.prepend(btn);
-        btn.innerText = "⌃ Mehr Optionen";
+        btn.innerText = "Mehr Optionen";
     } else {
         options.style.display = "block";
         options.after(btn);
-        btn.innerText = "⌄ Weniger";
+        btn.innerText = "Weniger";
     }
 });
 </script>
