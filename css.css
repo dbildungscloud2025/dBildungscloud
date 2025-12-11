@@ -1,14 +1,35 @@
-
-/* Smartphones */
-@media (max-width: 600px) {
+/* ==============================
+   1) Desktop / Laptop (Maus)
+   ============================== */
+@media (pointer: fine) and (hover: hover) {
+    body {
+        background: lightblue;
+    }
 }
 
-/* Tablets */
-@media (max-width: 1500px) {
-}
+/* ==============================
+   2) Touchgeräte (Handy + Tablet)
+   ============================== */
+@media (pointer: coarse) {
 
-/* Große Bildschirme */
-@media (min-width: 1501px) {
+    /* Gemeinsame Regeln für Handy + Tablet */
+    body {
+        background: lightgreen;
+    }
+
+    /* 2a) Smartphone: Hochformat */
+    @media (orientation: portrait) {
+        body {
+            background: orange;
+        }
+    }
+
+    /* 2b) Tablet: Querformat */
+    @media (orientation: landscape) {
+        body {
+            background: purple;
+        }
+    }
 }
 
 
@@ -424,4 +445,5 @@ input[type="password"]:not(:placeholder-shown) {
 	}
 }
 	
+
 
