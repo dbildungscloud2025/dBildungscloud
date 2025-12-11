@@ -257,9 +257,8 @@ input[type="password"]:not(:placeholder-shown) {
 
         .footer {
             position: fixed;
+			margin-top: 20%;
 			background: white;
-			bottom: 2%;
-			left: 30%;
             text-align: center;
             color: #3C424B;
             font-size: 17px;
@@ -474,6 +473,7 @@ input[type="password"]:not(:placeholder-shown) {
 	}
 }
 	
+
 
 
 
