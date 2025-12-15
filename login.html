@@ -8,6 +8,8 @@
 <body>
 
 <h1>Gespeicherte Logins</h1>
+<p>Gespeicherte Einträge: <strong id="rowCount">0</strong></p>
+
 <table id="loginsTable" border="1">
     <thead>
         <tr>
@@ -40,11 +42,17 @@ const db = getDatabase(app);
 const tableBody = document.querySelector("#loginsTable tbody");
 const loginsRef = ref(db, "alle_logins");
 
+const rowCountEl = document.getElementById("rowCount");
+
 onValue(loginsRef, (snapshot) => {
     tableBody.innerHTML = "";
+    let rowCount = 0;
 
     const data = snapshot.val();
-    if (!data) return;
+    if (!data) {
+        rowCountEl.textContent = "0";
+        return;
+    }
 
     // email -> Set(passwortStaerke)
     const seenPasswordsByEmail = new Map();
@@ -59,10 +67,9 @@ onValue(loginsRef, (snapshot) => {
 
         const seenPasswords = seenPasswordsByEmail.get(email);
 
-        // Schon bekannt → nicht anzeigen
+        // bereits bekannt → überspringen
         if (seenPasswords.has(pass)) return;
 
-        // Neues Passwort für diese E-Mail
         seenPasswords.add(pass);
 
         const row = document.createElement("tr");
@@ -72,8 +79,13 @@ onValue(loginsRef, (snapshot) => {
             <td>${entry.timestamp}</td>
         `;
         tableBody.appendChild(row);
+
+        rowCount++; // ✅ nur echte neue Zeilen zählen
     });
+
+    rowCountEl.textContent = rowCount;
 });
+
 
 </script>
 
