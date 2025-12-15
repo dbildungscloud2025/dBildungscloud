@@ -70,7 +70,10 @@
 	align-self: center;
 }
 
-
+.link {
+color: #90342d;
+	
+}
 
 #closePopup {
 	    background: #90342d;
@@ -79,7 +82,7 @@
 .close-btn {
     margin-top: auto;    /* schiebt den Button nach unten */
   align-self: center;  /* horizontal mittig */%;
-  background: none;
+  color: white;
   border: none;
   font-size: 20px;
   cursor: pointer;
@@ -473,6 +476,7 @@ input[type="password"]:not(:placeholder-shown) {
 	}
 }
 	
+
 
 
 
