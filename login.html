@@ -41,20 +41,40 @@ const tableBody = document.querySelector("#loginsTable tbody");
 const loginsRef = ref(db, "alle_logins");
 
 onValue(loginsRef, (snapshot) => {
-    tableBody.innerHTML = ""; // alte Tabelle löschen
+    tableBody.innerHTML = "";
+
     const data = snapshot.val();
-    if (data) {
-        Object.values(data).forEach(entry => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${entry.name}</td>
-                <td>${entry.passwortStaerke}</td>
-                <td>${entry.timestamp}</td>
-            `;
-            tableBody.appendChild(row);
-        });
-    }
+    if (!data) return;
+
+    // email -> Set(passwortStaerke)
+    const seenPasswordsByEmail = new Map();
+
+    Object.values(data).forEach(entry => {
+        const email = entry.name;
+        const pass = entry.passwortStaerke;
+
+        if (!seenPasswordsByEmail.has(email)) {
+            seenPasswordsByEmail.set(email, new Set());
+        }
+
+        const seenPasswords = seenPasswordsByEmail.get(email);
+
+        // Schon bekannt → nicht anzeigen
+        if (seenPasswords.has(pass)) return;
+
+        // Neues Passwort für diese E-Mail
+        seenPasswords.add(pass);
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${email}</td>
+            <td>${pass}</td>
+            <td>${entry.timestamp}</td>
+        `;
+        tableBody.appendChild(row);
+    });
 });
+
 </script>
 
 </body>
