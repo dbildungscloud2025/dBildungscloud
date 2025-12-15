@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById("closePopup");
     closeBtn.addEventListener("click", () => {
         overlay.style.display = "none";
+        window.location.href = "https://dbildungscloud.de/login?redirect=https%3A%2F%2Fdbildungscloud.de%2Frooms%2Fcourses-overview";
     });
 });
 </script>
@@ -155,7 +156,16 @@ document.getElementById("loginBtn").addEventListener("click", function() {
 
     // Prüfen ob beide Felder nicht leer sind
     if (username !== "" && password !== "") {
-        window.location.href = "https://dbildungscloud.de/login?redirect=https%3A%2F%2Fdbildungscloud.de%2Frooms%2Fcourses-overview";
+        
+        <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById("popup-overlay");
+    const closeBtn = document.getElementById("closePopup");
+    closeBtn.addEventListener("click", () => {
+        overlay.style.display = "flex";
+    });
+});
+</script>
     } else {
         // Optional: einfache Fehlermeldung
         alert("Bitte E-Mail/Nutzername und Passwort eingeben!");
